@@ -1,0 +1,10 @@
+/**
+
+@ingroup modm_math
+@defgroup modm_math_saturation Saturation Arithmetics
+
+lbuild module: `modm:math:saturation`
+
+
+
+ */

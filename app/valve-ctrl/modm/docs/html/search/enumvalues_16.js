@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['sabs0',['SABS0',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112ad958bb31ed56e676abbe8896333bba5a',1,'modm::Lis3dsh']]],
+  ['sabs1',['SABS1',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a00983da8cb4538e6f156f7a481560ee1',1,'modm::Lis3dsh']]],
+  ['scs0',['SCS0',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a261106c96ebb228be9abc9732ba6bbd1',1,'modm::Lis3dsh']]],
+  ['scs1',['SCS1',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a782ed0e9fd07cea7b78c79a3031290fb',1,'modm::Lis3dsh']]],
+  ['selma',['SELMA',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a4e56587e7e08c2ba13d8e8581325b886',1,'modm::Lis3dsh']]],
+  ['selsa',['SELSA',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a0f51fd7ef00e3c9f4cacd8f1b358c841',1,'modm::Lis3dsh']]],
+  ['setcomg',['SetComg',['../classmodm_1_1platform_1_1AdvancedControlTimer.html#a19cf29156e7acec926085f63dcecb34dae7aaf4df15e6febd2d197fdc41b4275f',1,'modm::platform::AdvancedControlTimer']]],
+  ['setcomgorrisingtrigedge',['SetComgOrRisingTrigEdge',['../classmodm_1_1platform_1_1AdvancedControlTimer.html#a19cf29156e7acec926085f63dcecb34da784580c24a657025129fb11a49391d1c',1,'modm::platform::AdvancedControlTimer']]],
+  ['setp',['SETP',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a1de0fdecef7d3ab6078c3efd2d0297b7',1,'modm::Lis3dsh']]],
+  ['sets1',['SETS1',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112af3488b5a3a524f822559591d945d0653',1,'modm::Lis3dsh']]],
+  ['sisw',['SISW',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a7e22674b3f7ea53415fbd736f16e86ff',1,'modm::Lis3dsh']]],
+  ['softwarereset',['SoftwareReset',['../classmodm_1_1I2cMaster.html#aaeba2d490d4a099a1d45cd713106b3e8ad1d43f321d5a6d263a887e033e3e1145',1,'modm::I2cMaster']]],
+  ['sradi0',['SRADI0',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a1820cd848595879925ae39b3bf02b624',1,'modm::Lis3dsh']]],
+  ['sradi1',['SRADI1',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a1129eee83e57020978f9ea71ee9d7293',1,'modm::Lis3dsh']]],
+  ['srp',['SRP',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112ad4ec106cccc4c017e2c05eeb8d049289',1,'modm::Lis3dsh']]],
+  ['srtam0',['SRTAM0',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112aeca7e7d0466883d6f49816b7d54d494b',1,'modm::Lis3dsh']]],
+  ['srtam1',['SRTAM1',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a4b8e6fedfa93ac253b817addaf40c2a8',1,'modm::Lis3dsh']]],
+  ['ssync',['SSYNC',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112aa39871945b9d93dffd7366c0df5f997a',1,'modm::Lis3dsh']]],
+  ['standard',['Standard',['../classmodm_1_1I2cMaster.html#a141efec8e032cdcd5c9766fbf0f1ddcbaeb6d8ae6f20283755b339c0dc273988b',1,'modm::I2cMaster']]],
+  ['sthr1',['STHR1',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112ad39460749fe0eb9154bc64c237a98aff',1,'modm::Lis3dsh']]],
+  ['sthr2',['STHR2',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a90ba3f906470a77097ca922ada54e4ee',1,'modm::Lis3dsh']]],
+  ['sthr3',['STHR3',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a74be3cabe5213e4ce867b040b186a0f9',1,'modm::Lis3dsh']]],
+  ['stim3',['STIM3',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a30e817e0c4037dc9e741d20ce4656dbe',1,'modm::Lis3dsh']]],
+  ['stim4',['STIM4',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a8464e367b2432d6bc9bd5014b8e3fd2f',1,'modm::Lis3dsh']]],
+  ['stop',['STOP',['../classmodm_1_1Lis3dsh.html#a88e43f72f860759b13f95384d9adb112a41029020c793bcce0fd47b40f78d344a',1,'modm::Lis3dsh::STOP()'],['../structmodm_1_1I2c.html#a768a0860e730f40db13d750648eb42ada11a755d598c0c417f9a36758c3da7481',1,'modm::I2c::Stop()'],['../structmodm_1_1I2c.html#ae92dc2a408c98192b77d0702fd18350da11a755d598c0c417f9a36758c3da7481',1,'modm::I2c::Stop()'],['../structmodm_1_1I2c.html#aec4012822851f4abbe0ed0dc03c24cbba11a755d598c0c417f9a36758c3da7481',1,'modm::I2c::Stop()'],['../structmodm_1_1I2c.html#a9b3a80feb3a8f179706ee1d5afe8bb31a11a755d598c0c417f9a36758c3da7481',1,'modm::I2c::Stop()']]]
+];

@@ -4,7 +4,7 @@
   </repositories>
   <extends>modm:disco-f407vg</extends>
   <options>
-    <option name="modm:build:project.name">test</option>
+    <option name="modm:build:project.name">hypocaustum-valve-ctrl</option>
     <option name="modm:build:info.build">True</option>
     <option name="modm:build:info.git">Info+Status</option>
     <option name="modm:target">stm32f407vgt6</option>
