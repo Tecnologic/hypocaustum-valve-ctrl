@@ -5,7 +5,6 @@
         "clang-flags": [
             ""
         ],
-        "clang-include-input-source": true,
         "clang-parsing": false,
         "clang-use-headers": true
     },
@@ -29,7 +28,6 @@
         "extract-local-methods": false,
         "extract-package": false,
         "extract-private": false,
-        "extract-private-virtual": false,
         "extract-static": false,
         "file-version-filter": "",
         "force-local-includes": false,
@@ -66,7 +64,6 @@
         "ns-alias": [
             ""
         ],
-        "python-docstring": false,
         "qt-auto-brief": false,
         "repeat-brief": true,
         "separate-member-pages": false,
@@ -136,7 +133,6 @@
         "uml-limit-num-fields": 10,
         "uml-look": false
     },
-    "doxyPress-location": "",
     "doxypress-format": 1,
     "doxypress-updated": "2018-Jun-30",
     "external": {
@@ -238,17 +234,10 @@
         "warn-doc-error": true,
         "warn-format": "$file:$line: $text",
         "warn-logfile": "",
-        "warn-param-mismatch": false,
-        "warn-sa-ignore-words": [
-            ""
-        ],
-        "warn-sa-missing-links": false,
         "warn-undoc": false,
         "warn-undoc-param": false,
         "warnings": false
     },
-    "opened-files": [
-    ],
     "output-chm": {
         "binary-toc": false,
         "chm-file": "",
@@ -279,8 +268,6 @@
         "enum-values-per-line": 4,
         "external-links-in-window": false,
         "formula-fontsize": 10,
-        "formula-format": "",
-        "formula-macrofile": "",
         "formula-transparent": true,
         "generate-html": true,
         "generate-treeview": true,
@@ -389,12 +376,9 @@
     },
     "output-xml": {
         "generate-xml": false,
-        "xml-include-ns-members": false,
         "xml-output": "xml",
         "xml-program-listing": true
     },
-    "pos-x": 0,
-    "pos-y": 0,
     "preprocessor": {
         "enable-preprocessing": true,
         "expand-as-defined": [
@@ -404,12 +388,8 @@
             "MODM_FLAGS32(x)"
         ],
         "expand-only-predefined": true,
-        "include-path": [
-            ""
-        ],
-        "include-patterns": [
-            ""
-        ],
+        "include-path": [],
+        "include-patterns": [],
         "macro-expansion": true,
         "predefined-macros": [
             "__DOXYGEN__",
@@ -431,8 +411,6 @@
         "project-name": "modm API documentation",
         "project-version": ""
     },
-    "size-height": 500,
-    "size-width": 799,
     "source": {
         "inline-source": false,
         "ref-by-relation": false,

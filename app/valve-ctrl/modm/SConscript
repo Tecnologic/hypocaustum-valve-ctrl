@@ -58,7 +58,6 @@ env["CCFLAGS"] = [
     "-funsigned-bitfields",
     "-funsigned-char",
     "-fwrapv",
-    "-g3",
     "-gdwarf-3",
     "-W",
     "-Wall",
@@ -88,6 +87,7 @@ if profile == "debug":
     ])
 
 env["CFLAGS"] = [
+    "-g3",
     "-std=gnu2x",
     "-Wbad-function-cast",
     "-Wimplicit",
@@ -101,6 +101,7 @@ env["CXXFLAGS"] = [
     "-fno-unwind-tables",
     "-fno-use-cxa-atexit",
     "-fstrict-enums",
+    "-g3",
     "-std=c++23",
     "-Wno-psabi",
     "-Wno-volatile",
@@ -108,7 +109,6 @@ env["CXXFLAGS"] = [
 ]
 
 env["ASFLAGS"] = [
-    "-g3",
     "-gdwarf-3",
 ]
 
