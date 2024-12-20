@@ -2,7 +2,6 @@
   <repositories>
     <repository><path>../../ext/modm/repo.lb</path></repository>
   </repositories>
-  <extends>modm:disco-f407vg</extends>
   <options>
     <option name="modm:build:project.name">hypocaustum-valve-ctrl</option>
     <option name="modm:build:info.build">True</option>
@@ -10,6 +9,9 @@
     <option name="modm:target">stm32f407vgt6</option>
     <option name="modm:platform:rtt:buffer.rx">16</option>
   </options>
+  <collectors>
+    <collect name="modm:build:openocd.source">board/stm32f4discovery.cfg</collect>
+  </collectors>
   <modules>
     <module>modm:build:scons</module>
     <module>modm:docs</module>
