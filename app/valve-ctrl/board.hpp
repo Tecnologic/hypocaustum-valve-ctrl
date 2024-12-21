@@ -1,26 +1,49 @@
 /*
- * Copyright (c) 2013, Kevin Läufer
- * Copyright (c) 2015-2018, Niklas Hauser
- * Copyright (c) 2017, Sascha Schade
- * Copyright (c) 2018, Antal Szabó
- *
- * This file is part of the modm project.
- *
- * This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
- */
+//////////////////////////////////////////////////////////////////////
+// _   _                                       _                    //
+//| | | |_   _ _ __   ___   ___ __ _ _   _ ___| |_ _   _ _ __ ___   //
+//| |_| | | | | '_ \ / _ \ / __/ _` | | | / __| __| | | | '_ ` _ \  //
+//|  _  | |_| | |_) | (_) | (_| (_| | |_| \__ \ |_| |_| | | | | | | //
+//|_| |_|\__, | .__/ \___/ \___\__,_|\__,_|___/\__|\__,_|_| |_| |_| //
+//       |___/|_|                                                   //
+//////////////////////////////////////////////////////////////////////
+
+A under floor heating control system for DC-Mootor Vales like HmIP VDMOT
+This project is based on the modm library.
+
+Copyright(C) 2024 Alexander Evers
+
+This program is free software;
+you can redistribute it and / or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation;
+either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program;
+if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110 - 1301, USA
+*/
 // ----------------------------------------------------------------------------
 
-#ifndef MODM_STM32_F4_DISCOVERY_HPP
-#define MODM_STM32_F4_DISCOVERY_HPP
+#ifndef MODM_VALVE_CTRL_BOARD_HPP
+#define MODM_VALVE_CTRL_BOARD_HPP
 
 #include <modm/platform.hpp>
 #include <modm/architecture/interface/clock.hpp>
-#include <modm/driver/inertial/lis3dsh.hpp>
 
 using namespace modm::platform;
 
+// ----------------------------------------------------------------------------
+// Set the log level
+#undef MODM_LOG_LEVEL
+#define MODM_LOG_LEVEL modm::log::INFO
+
+// ----------------------------------------------------------------------------
 namespace Board
 {
 /// @ingroup modm_board_disco_f407vg
@@ -119,52 +142,6 @@ using LedBlue   = GpioOutputD15;	// User LED 6
 using Leds = SoftwareGpioPort< LedGreen, LedBlue, LedRed, LedOrange >;
 /// @}
 
-namespace lis3
-{
-/// @ingroup modm_board_disco_f407vg
-/// @{
-using Int = GpioInputE1;	// LIS302DL_INT2
-
-using Cs   = GpioOutputE3;	// LIS302DL_CS_I2C/SPI
-using Sck  = GpioOutputA5;	// SPI1_SCK
-using Mosi = GpioOutputA7;	// SPI1_MOSI
-using Miso = GpioInputA6;	// SPI1_MISO
-
-using SpiMaster = SpiMaster1;
-using Transport = modm::Lis3TransportSpi< SpiMaster, Cs >;
-/// @}
-}
-
-
-namespace cs43
-{
-/// @ingroup modm_board_disco_f407vg
-/// @{
-using Lrck = GpioOutputA4;	// I2S3_WS
-using Mclk = GpioOutputC7;	// I2S3_MCK
-using Sclk = GpioOutputC10;	// I2S3_SCK
-using Sdin = GpioOutputC12;	// I2S3_SD
-
-using Reset = GpioOutputD4;	// Audio_RST
-using Scl = GpioB6;			// Audio_SCL
-using Sda = GpioB9;			// Audio_SDA
-
-using I2cMaster = I2cMaster1;
-//using I2sMaster = I2sMaster3;
-/// @}
-}
-
-
-namespace mp45
-{
-/// @ingroup modm_board_disco_f407vg
-/// @{
-using Clk = GpioOutputB10;	// CLK_IN: I2S2_CK
-using Dout = GpioInputC3;	// PDM_OUT: I2S2_SD
-//using I2sMaster = I2sMaster2;
-/// @}
-}
-
 
 namespace usb
 {
@@ -182,67 +159,7 @@ using Device = UsbFs;
 /// @}
 }
 
-/// @ingroup modm_board_disco_f407vg
-/// @{
-inline void
-initialize()
-{
-	SystemClock::enable();
-	SysTickTimer::initialize<SystemClock>();
-
-	Leds::setOutput(modm::Gpio::Low);
-
-	Button::setInput();
-}
-
-inline void
-initializeLis3()
-{
-	lis3::Int::setInput();
-	lis3::Cs::setOutput(modm::Gpio::High);
-
-	lis3::SpiMaster::connect<lis3::Sck::Sck, lis3::Mosi::Mosi, lis3::Miso::Miso>();
-	lis3::SpiMaster::initialize<SystemClock, 10_MHz>();
-	lis3::SpiMaster::setDataMode(lis3::SpiMaster::DataMode::Mode3);
-}
-
-/// not supported yet, due to missing I2S driver
-inline void
-initializeCs43()
-{
-//	cs43::Lrck::connect(cs43::I2sMaster::Ws);
-//	cs43::Mclk::connect(cs43::I2sMaster::Mck);
-//	cs43::Sclk::connect(cs43::I2sMaster::Ck);
-//	cs43::Sdin::connect(cs43::I2sMaster::Sd);
-
-	cs43::Reset::setOutput(modm::Gpio::High);
-
-	cs43::I2cMaster::connect<cs43::Scl::Scl, cs43::Sda::Sda>();
-	cs43::I2cMaster::initialize<SystemClock, 100_kHz>();
-}
-
-/// not supported yet, due to missing I2S driver
-inline void
-initializeMp45()
-{
-//	mp45::Clk::connect(mp45::I2sMaster::Ck);
-//	mp45::Dout::connect(mp45::I2sMaster::Sd);
-}
-
-inline void
-initializeUsbFs(uint8_t priority=3)
-{
-	usb::Device::initialize<SystemClock>(priority);
-	usb::Device::connect<usb::Dm::Dm, usb::Dp::Dp, usb::Id::Id>();
-
-	usb::Overcurrent::setInput();
-	usb::Vbus::setInput();
-	// Enable VBUS sense (B device) via pin PA9
-	USB_OTG_FS->GCCFG &= ~USB_OTG_GCCFG_NOVBUSSENS;
-	USB_OTG_FS->GCCFG |= USB_OTG_GCCFG_VBUSBSEN;
-}
-/// @}
 
 }
 
-#endif	// MODM_STM32_F4_DISCOVERY_HPP
+#endif // MODM_VALVE_CTRL_BOARD_HPP

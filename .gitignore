@@ -34,3 +34,4 @@
 *.pyc
 
 app/valve-ctrl/build/
+*.dblite

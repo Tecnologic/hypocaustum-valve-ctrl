@@ -36,33 +36,13 @@ if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth F
 
 
 // ----------------------------------------------------------------------------
-// Set the log level
-#undef MODM_LOG_LEVEL
-#define MODM_LOG_LEVEL modm::log::INFO
-
-																												 Rtt rtt(0);
-modm::IODeviceObjectWrapper<Rtt, modm::IOBuffer::DiscardIfFull> rtt_device(rtt);
-// Set all four logger streams to use RTT
-modm::log::Logger modm::log::debug(rtt_device);
-modm::log::Logger modm::log::info(rtt_device);
-modm::log::Logger modm::log::warning(rtt_device);
-modm::log::Logger modm::log::error(rtt_device);
-
-// ----------------------------------------------------------------------------
 using namespace modm::literals;
 // ----------------------------------------------------------------------------
 int
 main()
 {
 	Board::initialize();
-
-	Board::LedOrange::setOutput();
-	Board::LedGreen::setOutput();
-	Board::LedBlue::setOutput();
-	Board::LedRed::setOutput();
 	
-	Board::Button::setInput();
-
 	Adc1::connect<GpioC0::In10>();
 	Adc1::initialize<Board::SystemClock, 21_MHz, 0.1f>();
 
