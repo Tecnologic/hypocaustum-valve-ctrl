@@ -66,8 +66,9 @@ initialize()
 inline void
 initializeADC()
 {
-	Adc1::connect<GpioC0::In10>();
+	Adc1::connect<AdcCurIn>();
 	Adc1::initialize<Board::SystemClock, 21_MHz, 0.1f>();
+
 }
 
 void

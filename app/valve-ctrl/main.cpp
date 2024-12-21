@@ -42,16 +42,14 @@ int
 main()
 {
 	Board::initialize();
-	
-	Adc1::connect<GpioC0::In10>();
-	Adc1::initialize<Board::SystemClock, 21_MHz, 0.1f>();
-
-	MODM_LOG_INFO << "Current Control Test" << modm::endl;
 
 
 	while (true)
 	{
-
+		Board::LedGreen::set();
+		modm::delay_ms(500);
+		Board::LedGreen::reset();
+		modm::delay_ms(500);
 	}
 
 	return 0;

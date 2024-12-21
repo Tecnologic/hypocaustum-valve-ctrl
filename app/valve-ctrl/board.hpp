@@ -140,8 +140,10 @@ using LedRed    = GpioOutputD14;	// User LED 5
 using LedBlue   = GpioOutputD15;	// User LED 6
 
 using Leds = SoftwareGpioPort< LedGreen, LedBlue, LedRed, LedOrange >;
-/// @}
 
+using AdcCurIn = GpioC0::In10;
+using PwmOut = GpioA8::Ch1;
+/// @}
 
 namespace usb
 {
