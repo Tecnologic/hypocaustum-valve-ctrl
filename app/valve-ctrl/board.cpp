@@ -63,12 +63,33 @@ initialize()
 	MODM_LOG_INFO << "Board initialized" << modm::endl;
 }
 
-inline void
+void
 initializeADC()
 {
-	Adc1::connect<AdcCurIn>();
+	Adc1::connect<Adc1::getPinChannel<CurInput>()>();
 	Adc1::initialize<Board::SystemClock, 21_MHz, 0.1f>();
 
+}
+
+void 
+initializePWM()
+{
+	using Timer = modm::platform::Timer1;
+	Timer::enable();
+	Timer::setMode(Timer::Mode::CenterAligned1);
+	Timer::setPrescaler(1);
+	Timer::setOverflow(Board::SystemClock::Frequency / PwmFrequency);
+	Timer::configureOutputChannel(1,
+								  Timer::OutputCompareMode::Pwm,
+								  Timer::PinState::Enable,					// enable Ch1 output	
+								  Timer::OutputComparePolarity::ActiveHigh, 
+								  Timer::PinState::Enable,					// enable Ch1n output
+								  Timer::OutputComparePolarity::ActiveHigh, // OutputComparePolarity for Ch1n
+								  Timer::OutputComparePreload::Disable);
+	Timer::connect<GpioA8::Ch1, GpioA7::Ch1n>();
+	Timer::setCompareValue(1, 0);	
+	Timer::applyAndReset();
+	Timer::enableOutput();	
 }
 
 void

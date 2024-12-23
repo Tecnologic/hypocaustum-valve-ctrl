@@ -141,8 +141,10 @@ using LedBlue   = GpioOutputD15;	// User LED 6
 
 using Leds = SoftwareGpioPort< LedGreen, LedBlue, LedRed, LedOrange >;
 
-using AdcCurIn = GpioC0::In10;
-using PwmOut = GpioA8::Ch1;
+using CurInput = GpioC0;
+using PwmOut = GpioA8;
+
+constexpr uint32_t PwmFrequency = 16_kHz;
 /// @}
 
 namespace usb
